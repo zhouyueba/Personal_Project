@@ -13,6 +13,8 @@
 		22DE8DF129ADFE530063C1EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE8DEF29ADFE530063C1EC /* Main.storyboard */; };
 		22DE8DF329ADFE550063C1EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DE8DF229ADFE550063C1EC /* Assets.xcassets */; };
 		22DE8DF629ADFE550063C1EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE8DF429ADFE550063C1EC /* LaunchScreen.storyboard */; };
+		22DE8DFF29AE02470063C1EC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 22DE8DFE29AE02470063C1EC /* SwiftyJSON */; };
+		22DE8E0229AE02850063C1EC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22DE8E0129AE02850063C1EC /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DE8DFF29AE02470063C1EC /* SwiftyJSON in Frameworks */,
+				22DE8E0229AE02850063C1EC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,10 @@
 			dependencies = (
 			);
 			name = Personal;
+			packageProductDependencies = (
+				22DE8DFE29AE02470063C1EC /* SwiftyJSON */,
+				22DE8E0129AE02850063C1EC /* SnapKit */,
+			);
 			productName = Personal;
 			productReference = 22DE8DE629ADFE530063C1EC /* Personal.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,10 @@
 				Base,
 			);
 			mainGroup = 22DE8DDD29ADFE530063C1EC;
+			packageReferences = (
+				22DE8DFD29AE02470063C1EC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				22DE8E0029AE02850063C1EC /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 22DE8DE729ADFE530063C1EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +370,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22DE8DFD29AE02470063C1EC /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		22DE8E0029AE02850063C1EC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22DE8DFE29AE02470063C1EC /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22DE8DFD29AE02470063C1EC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		22DE8E0129AE02850063C1EC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22DE8E0029AE02850063C1EC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 22DE8DDE29ADFE530063C1EC /* Project object */;
 }
