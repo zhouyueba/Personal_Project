@@ -1,0 +1,108 @@
+{
+    "result": {
+        "id": 7,
+        "secret": "e9cd35e2d6e386fb",
+        "hardware": 1,
+        "mac": "aabbccdd3306",
+        "firmwareDetails": [{
+            "module": "app",
+            "version": 230301
+        }, {
+            "module": "audio",
+            "version": 224301
+        }, {
+            "module": "lib",
+            "version": 224301
+        }, {
+            "module": "ko",
+            "version": 224201
+        }, {
+            "module": "kernel",
+            "version": 224201
+        }, {
+            "module": "rootfs",
+            "version": 224201
+        }, {
+            "module": "uboot",
+            "version": 224201
+        }],
+        "signupAt": "2023-02-24T11:04:45.475Z",
+        "user": {
+            "gender": 1,
+            "id": "1030421",
+            "nick": "times",
+            "point": {
+                "honour": "出栏猪",
+                "growth": 131,
+                "startGrowth": 100,
+                "rank": 2,
+                "endGrowth": 300,
+                "icon": "https:\/\/sandbox-img5.petkit.cn\/misc\/point\/n0",
+                "icon2": "https:\/\/sandbox-img5.petkit.cn\/misc\/point\/l0"
+            },
+            "avatar": "http:\/\/sandbox.img5.petkit.cn\/banner\/2022\/10\/13\/6347d7c8a344e5000b575c02PxkreS7Kl"
+        },
+        "btMac": "aabbccdd0006",
+        "state": {
+            "ispEv": 0,
+            "lapse": 0,
+            "pim": 1,
+            "wbRgain": 0,
+            "wbBgain": 0,
+            "power": 1,
+            "ota": 0,
+            "overall": 1,
+            "wifi": {
+                "bssid": "aabbccdd3306",
+                "rsq": 69,
+                "ssid": "petkit"
+            }
+        },
+        "settings": {
+            "petAlarmInterval": 10,
+            "lapseTime": 1,
+            "highlight": 1,
+            "shooting": 1,
+            "moveTracking": 0,
+            "language": "zh_CN",
+            "languageFollow": 0,
+            "moveDetection": 1,
+            "languages": ["zh_CN", "en_US"],
+            "moveSensitivity": 1,
+            "petNotify": 1,
+            "petDetection": 1,
+            "cardShooting": 1,
+            "reversal": 0,
+            "infrared": 1,
+            "timeDisplay": 1,
+            "lapseVideo": 10,
+            "moveAlarmInterval": 10,
+            "petSensitivity": 1,
+            "moveNotify": 1,
+            "microphone": 1,
+            "moveAlarmTime": [
+                
+            ],
+            "petAlarmAllDay": 10,
+            "upload": 1,
+            "petAlarmTime": [
+                
+            ],
+            "lapseEnd": 1677493944,
+            "light": 1,
+            "petTracking": 0,
+            "moveAlarmAllDay": 10
+        },
+        "tencentTuple": 7,
+        "serviceStatus": 0,
+        "shareOpen": 1,
+        "relation": {
+            "userId": "1030421"
+        },
+        "timezone": 8,
+        "firmware": "2.1",
+        "sn": "20221019H30006",
+        "createdAt": "2022-10-25T18:44:17.879Z",
+        "name": "摄像机"
+    }
+}

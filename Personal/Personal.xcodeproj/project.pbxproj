@@ -15,6 +15,21 @@
 		22DE8DF629ADFE550063C1EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DE8DF429ADFE550063C1EC /* LaunchScreen.storyboard */; };
 		22DE8DFF29AE02470063C1EC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 22DE8DFE29AE02470063C1EC /* SwiftyJSON */; };
 		22DE8E0229AE02850063C1EC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22DE8E0129AE02850063C1EC /* SnapKit */; };
+		22DE8E0E29AE172A0063C1EC /* Relation_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E0529AE172A0063C1EC /* Relation_model.swift */; };
+		22DE8E0F29AE172A0063C1EC /* FirmwareDetails_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E0629AE172A0063C1EC /* FirmwareDetails_model.swift */; };
+		22DE8E1029AE172A0063C1EC /* Wifi_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E0729AE172A0063C1EC /* Wifi_model.swift */; };
+		22DE8E1129AE172A0063C1EC /* Settings_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E0829AE172A0063C1EC /* Settings_model.swift */; };
+		22DE8E1229AE172A0063C1EC /* H3DeviceDetail_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E0929AE172A0063C1EC /* H3DeviceDetail_model.swift */; };
+		22DE8E1329AE172A0063C1EC /* Result_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E0A29AE172A0063C1EC /* Result_model.swift */; };
+		22DE8E1429AE172A0063C1EC /* State_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E0B29AE172A0063C1EC /* State_model.swift */; };
+		22DE8E1529AE172A0063C1EC /* User_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E0C29AE172A0063C1EC /* User_model.swift */; };
+		22DE8E1629AE172A0063C1EC /* Point_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E0D29AE172A0063C1EC /* Point_model.swift */; };
+		22DE8E1829AE18160063C1EC /* H3DeviceDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 22DE8E1729AE18150063C1EC /* H3DeviceDetail.json */; };
+		22DE8E1F29AE18EF0063C1EC /* SysXp2pInfo_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E1A29AE18EE0063C1EC /* SysXp2pInfo_model.swift */; };
+		22DE8E2029AE18EF0063C1EC /* getDeviceXp2pInfoResult_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E1B29AE18EE0063C1EC /* getDeviceXp2pInfoResult_model.swift */; };
+		22DE8E2129AE18EF0063C1EC /* H3P2PInfo_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E1C29AE18EE0063C1EC /* H3P2PInfo_model.swift */; };
+		22DE8E2229AE18EF0063C1EC /* DevInfo_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E1D29AE18EE0063C1EC /* DevInfo_model.swift */; };
+		22DE8E2329AE18EF0063C1EC /* Value_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E1E29AE18EF0063C1EC /* Value_model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +41,21 @@
 		22DE8DF229ADFE550063C1EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22DE8DF529ADFE550063C1EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22DE8DF729ADFE550063C1EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22DE8E0529AE172A0063C1EC /* Relation_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relation_model.swift; sourceTree = "<group>"; };
+		22DE8E0629AE172A0063C1EC /* FirmwareDetails_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmwareDetails_model.swift; sourceTree = "<group>"; };
+		22DE8E0729AE172A0063C1EC /* Wifi_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wifi_model.swift; sourceTree = "<group>"; };
+		22DE8E0829AE172A0063C1EC /* Settings_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_model.swift; sourceTree = "<group>"; };
+		22DE8E0929AE172A0063C1EC /* H3DeviceDetail_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H3DeviceDetail_model.swift; sourceTree = "<group>"; };
+		22DE8E0A29AE172A0063C1EC /* Result_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result_model.swift; sourceTree = "<group>"; };
+		22DE8E0B29AE172A0063C1EC /* State_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State_model.swift; sourceTree = "<group>"; };
+		22DE8E0C29AE172A0063C1EC /* User_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User_model.swift; sourceTree = "<group>"; };
+		22DE8E0D29AE172A0063C1EC /* Point_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point_model.swift; sourceTree = "<group>"; };
+		22DE8E1729AE18150063C1EC /* H3DeviceDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = H3DeviceDetail.json; sourceTree = "<group>"; };
+		22DE8E1A29AE18EE0063C1EC /* SysXp2pInfo_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysXp2pInfo_model.swift; sourceTree = "<group>"; };
+		22DE8E1B29AE18EE0063C1EC /* getDeviceXp2pInfoResult_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getDeviceXp2pInfoResult_model.swift; sourceTree = "<group>"; };
+		22DE8E1C29AE18EE0063C1EC /* H3P2PInfo_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H3P2PInfo_model.swift; sourceTree = "<group>"; };
+		22DE8E1D29AE18EE0063C1EC /* DevInfo_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevInfo_model.swift; sourceTree = "<group>"; };
+		22DE8E1E29AE18EF0063C1EC /* Value_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value_model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +90,8 @@
 		22DE8DE829ADFE530063C1EC /* Personal */ = {
 			isa = PBXGroup;
 			children = (
+				22DE8E1929AE18D80063C1EC /* H3P2PInfo */,
+				22DE8E0429AE16830063C1EC /* H3DeviceDetail */,
 				22DE8DE929ADFE530063C1EC /* AppDelegate.swift */,
 				22DE8DEB29ADFE530063C1EC /* SceneDelegate.swift */,
 				22DE8DED29ADFE530063C1EC /* ViewController.swift */,
@@ -69,6 +101,35 @@
 				22DE8DF729ADFE550063C1EC /* Info.plist */,
 			);
 			path = Personal;
+			sourceTree = "<group>";
+		};
+		22DE8E0429AE16830063C1EC /* H3DeviceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				22DE8E0629AE172A0063C1EC /* FirmwareDetails_model.swift */,
+				22DE8E0929AE172A0063C1EC /* H3DeviceDetail_model.swift */,
+				22DE8E0D29AE172A0063C1EC /* Point_model.swift */,
+				22DE8E0529AE172A0063C1EC /* Relation_model.swift */,
+				22DE8E0A29AE172A0063C1EC /* Result_model.swift */,
+				22DE8E0829AE172A0063C1EC /* Settings_model.swift */,
+				22DE8E0B29AE172A0063C1EC /* State_model.swift */,
+				22DE8E0C29AE172A0063C1EC /* User_model.swift */,
+				22DE8E0729AE172A0063C1EC /* Wifi_model.swift */,
+				22DE8E1729AE18150063C1EC /* H3DeviceDetail.json */,
+			);
+			path = H3DeviceDetail;
+			sourceTree = "<group>";
+		};
+		22DE8E1929AE18D80063C1EC /* H3P2PInfo */ = {
+			isa = PBXGroup;
+			children = (
+				22DE8E1D29AE18EE0063C1EC /* DevInfo_model.swift */,
+				22DE8E1C29AE18EE0063C1EC /* H3P2PInfo_model.swift */,
+				22DE8E1B29AE18EE0063C1EC /* getDeviceXp2pInfoResult_model.swift */,
+				22DE8E1A29AE18EE0063C1EC /* SysXp2pInfo_model.swift */,
+				22DE8E1E29AE18EF0063C1EC /* Value_model.swift */,
+			);
+			path = H3P2PInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +183,7 @@
 			packageReferences = (
 				22DE8DFD29AE02470063C1EC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				22DE8E0029AE02850063C1EC /* XCRemoteSwiftPackageReference "SnapKit" */,
+				22DE8E0329AE07A50063C1EC /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 22DE8DE729ADFE530063C1EC /* Products */;
 			projectDirPath = "";
@@ -138,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DE8DF629ADFE550063C1EC /* LaunchScreen.storyboard in Resources */,
+				22DE8E1829AE18160063C1EC /* H3DeviceDetail.json in Resources */,
 				22DE8DF329ADFE550063C1EC /* Assets.xcassets in Resources */,
 				22DE8DF129ADFE530063C1EC /* Main.storyboard in Resources */,
 			);
@@ -151,8 +214,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DE8DEE29ADFE530063C1EC /* ViewController.swift in Sources */,
+				22DE8E1529AE172A0063C1EC /* User_model.swift in Sources */,
+				22DE8E1629AE172A0063C1EC /* Point_model.swift in Sources */,
+				22DE8E0F29AE172A0063C1EC /* FirmwareDetails_model.swift in Sources */,
+				22DE8E0E29AE172A0063C1EC /* Relation_model.swift in Sources */,
+				22DE8E1429AE172A0063C1EC /* State_model.swift in Sources */,
+				22DE8E1229AE172A0063C1EC /* H3DeviceDetail_model.swift in Sources */,
+				22DE8E1F29AE18EF0063C1EC /* SysXp2pInfo_model.swift in Sources */,
 				22DE8DEA29ADFE530063C1EC /* AppDelegate.swift in Sources */,
+				22DE8E2229AE18EF0063C1EC /* DevInfo_model.swift in Sources */,
+				22DE8E1029AE172A0063C1EC /* Wifi_model.swift in Sources */,
+				22DE8E2029AE18EF0063C1EC /* getDeviceXp2pInfoResult_model.swift in Sources */,
+				22DE8E2129AE18EF0063C1EC /* H3P2PInfo_model.swift in Sources */,
 				22DE8DEC29ADFE530063C1EC /* SceneDelegate.swift in Sources */,
+				22DE8E1329AE172A0063C1EC /* Result_model.swift in Sources */,
+				22DE8E1129AE172A0063C1EC /* Settings_model.swift in Sources */,
+				22DE8E2329AE18EF0063C1EC /* Value_model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +463,14 @@
 			requirement = {
 				branch = develop;
 				kind = branch;
+			};
+		};
+		22DE8E0329AE07A50063C1EC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
