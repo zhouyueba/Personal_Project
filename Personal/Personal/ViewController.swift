@@ -89,6 +89,8 @@ class EatOrFoodViewModel: BaseViewModel {
     }
 }
 
+
+
 // Cell
 class BaseCell: UITableViewCell {
     
@@ -359,23 +361,139 @@ class TapBarView: UIView {
 
 // 进食或出粮
 class EatOrFoodCell: BaseCell {
+    
+    @objc func pressBtn(sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
+    
+    lazy var leftTimeL: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Bold", size: 16)
+        label.text = "18:00"
+        label.textAlignment = .left
+        return label
+    }()
+    
+    lazy var leftIconImgV: UIImageView = {
+        let imageV = UIImageView()
+        imageV.backgroundColor = .red
+        return imageV
+    }()
+    
+    lazy var contentL1: UILabel = {
+        
+        let title = "加餐已出粮"
+        let subTitle = "共6份 [1仓 3份， 2仓 3份]"
+        let totalTitle = "\(title) \n\(subTitle)"
+
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 2
+        
+        let mutStr = NSMutableAttributedString(string: "\(title)\n\(subTitle)")
+        
+        mutStr.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: title.count, length: subTitle.count + 1))
+        mutStr.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: totalTitle.count-1))
+        
+        
+        let label = UILabel()
+        label.font = UIFont(name: "Semibold", size: 16)
+        label.text = "\(title) \n\(subTitle)"
+        label.attributedText = mutStr
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var foldBtn: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setTitle("fold", for: .normal)
+        button.setTitle("unFold", for: .selected)
+        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.black, for: .selected)
+        button.addTarget(self, action: #selector(self.pressBtn), for: .touchUpInside)
+        button.isSelected = false
+        return button
+    }()
+    
+    lazy var lineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        return view
+    }()
+    
+    lazy var imageV: UIImageView = {
+        let imageV = UIImageView()
+        imageV.backgroundColor = UIColor.blue.withAlphaComponent(0.4)
+        return imageV
+    }()
 
     override func setUI() {
         self.contentView.backgroundColor = .white
+        self.bgView.backgroundColor = .white
         self.contentView.addSubview(self.bgView)
         self.bgView.snp.makeConstraints { make in
             make.bottom.equalTo(self.contentView.snp_bottomMargin).offset(-8)
             make.top.equalTo(self.contentView.snp_topMargin).offset(8)
             make.width.equalTo(self.contentView)
             make.centerX.equalTo(self.contentView)
-            make.height.equalTo(200)
+//            make.height.equalTo(200)
         }
+        
+        self.bgView.addSubview(leftTimeL)
+        leftTimeL.snp.makeConstraints { make in
+            make.left.equalTo(14)
+            make.top.equalTo(self.bgView)
+        }
+        
+        self.bgView.addSubview(leftIconImgV)
+        leftIconImgV.snp.makeConstraints { make in
+            make.left.equalTo(leftTimeL.snp.right).offset(14)
+            make.size.equalTo(CGSize(width: 20, height: 20))
+            make.centerY.equalTo(leftTimeL)
+        }
+        
+        self.bgView.addSubview(foldBtn)
+        foldBtn.snp.makeConstraints { make in
+            make.right.equalTo(self.bgView).offset(-14)
+            make.centerY.equalTo(leftTimeL)
+        }
+        
+        self.bgView.addSubview(contentL1)
+        contentL1.snp.makeConstraints { make in
+            make.left.equalTo(leftIconImgV.snp.right).offset(14)
+            make.top.equalTo(leftIconImgV.snp.top)
+            make.width.lessThanOrEqualTo(self.bgView).dividedBy(2)
+            
+        }
+        
+        self.bgView.addSubview(imageV)
+        imageV.snp.makeConstraints { make in
+            make.left.equalTo(contentL1)
+            make.top.equalTo(contentL1.snp.bottom).offset(12)
+            make.size.equalTo(CGSize(width: 235, height: 146))
+            make.bottom.equalTo(-10)
+        }
+        
+        self.bgView.addSubview(lineView)
+        lineView.snp.makeConstraints { make in
+            make.top.equalTo(leftIconImgV.snp.bottom).offset(10)
+            make.centerX.equalTo(leftIconImgV)
+            make.width.equalTo(1)
+            make.bottom.equalTo(self.bgView).offset(33)
+        }
+        
+      
     }
 }
 
 class ViewController: UIViewController {
     
+    let fullPlayVC: FullPlayViewController = FullPlayViewController()
+    
     var dataSource: Array<Sects> = []
+    
+    var isLandScape: Bool = false
     
     
     lazy var tableView: UITableView = {
@@ -404,7 +522,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let topSect = Sects(rows: [VideoViewModel(), ErrorViewModel(), CardViewModel()])
+        fullPlayVC.backBlockFunc { type in
+            self.portraitLayout()
+        }
+        
+        let topSect = Sects(rows: [VideoViewModel(), ErrorViewModel(), ErrorViewModel(), CardViewModel()])
         
         let bottomSect = Sects(rows: [EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel()])
         
@@ -422,7 +544,47 @@ class ViewController: UIViewController {
             make.top.equalTo(self.view.snp_topMargin)
             make.bottom.equalTo(self.view.snp_bottomMargin)
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appBecomeActive), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
+    
+    @objc func appBecomeActive() {
+        
+        if isLandScape {
+            landScapeLayout()
+        }
+    }
+
+    
+    
+    func landScapeLayout() {
+        
+        isLandScape = true
+        
+        setViewController(canLandscape: true)
+        setViewController(isLanscape: true)
+        
+    
+        self.view.addSubview(fullPlayVC.view)
+        fullPlayVC.view.snp.makeConstraints { make in
+            make.edges.equalTo(self.view)
+        }
+       
+    }
+    
+    func portraitLayout() {
+        
+        isLandScape = false
+        
+        self.setViewController(canLandscape: false)
+        self.setViewController(isLanscape: false)
+        fullPlayVC.view.removeFromSuperview()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        self.tableView.reloadData()
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -492,11 +654,50 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nav = UINavigationController(rootViewController: FullPlayViewController())
-        nav.modalPresentationStyle = .overFullScreen
-        self.present(nav, animated: true)
+        
+        if indexPath.section == 0 && indexPath.row == 0 {
+            
+            landScapeLayout()
+        }
     }
 }
+
+extension ViewController {
+
+    func setViewController(canLandscape: Bool) {
+        let myAppDelegate = UIApplication.shared.delegate as? AppDelegate
+        myAppDelegate?.allowRotation = canLandscape
+    }
+    
+    func setViewController(isLanscape: Bool) {
+        
+        if isLanscape {
+            if #available(iOS 16.0, *) {
+                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: .landscapeRight)) { error in
+                    print(error)
+                    
+                }
+                self.navigationController?.setNeedsUpdateOfSupportedInterfaceOrientations()
+                self.setNeedsUpdateOfSupportedInterfaceOrientations()
+            } else {
+                // Fallback on earlier versions
+                UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+            }
+        } else {
+            if #available(iOS 16.0, *) {
+                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait))
+                self.navigationController?.setNeedsUpdateOfSupportedInterfaceOrientations()
+                self.setNeedsUpdateOfSupportedInterfaceOrientations()
+            } else {
+                // Fallback on earlier versions
+                UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+            }
+        }
+    }
+}
+
 
 extension UITableViewCell {
     

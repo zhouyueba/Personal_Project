@@ -36,9 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         
+        if allowRotation {
+            print("landscape")
+            return UIInterfaceOrientationMask.landscapeRight
+        } else {
+            print("portrait")
+            return UIInterfaceOrientationMask.portrait
+        }
         
-        
-        return allowRotation ? [.landscapeRight, .portrait] : UIInterfaceOrientationMask.portrait
     }
 
 

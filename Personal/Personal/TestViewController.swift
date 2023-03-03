@@ -9,8 +9,6 @@ import UIKit
 
 class TestViewController: UIViewController {
     
-
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -20,11 +18,7 @@ class TestViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-      
     }
-    
- 
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
