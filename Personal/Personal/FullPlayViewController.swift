@@ -223,6 +223,22 @@ class FullPlayViewController: UIViewController {
         
         self.leftControl.bindViewModel(viewModel: LeftControlViewModel(qualityStr: "Hello", speedStr: "world")) { type in
             print(type)
+            
+            if type == .Shot {
+                let view = OpenCloudView()
+                self.placeView.addSubview(view)
+                view.snp.makeConstraints { make in
+                    make.center.equalTo(self.placeView)
+                }
+            }
+            
+            if type == .Record {
+                let view = VideoOutDateView()
+                self.placeView.addSubview(view)
+                view.snp.makeConstraints { make in
+                    make.center.equalTo(self.placeView)
+                }
+            }
         }
         
         let topSect = Sects(rows: [VideoViewModel(), ErrorViewModel(), CardViewModel()])

@@ -193,6 +193,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 && indexPath.row == 0 {
             
             landScapeLayout()
+        } else {
+            
+            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? VideoCell
+            
+            if let cell = cell {
+                if indexPath.row == 1 {
+                    let view = OpenCloudView()
+                    cell.placeView.addSubview(view)
+                    view.snp.makeConstraints { make in
+                        make.center.equalTo(cell.placeView)
+//                        make.size.equalTo(CGSize(width: 200, height: 90))
+                    }
+                    
+                }
+                
+                if indexPath.row == 2 {
+                    
+                }
+            }
+        
+            
+         
         }
     }
 }
