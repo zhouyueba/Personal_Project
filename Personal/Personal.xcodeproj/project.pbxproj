@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2279817329B5DCF700F1FDFD /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279817229B5DCF700F1FDFD /* CommonCell.swift */; };
+		2279817529B5DDA100F1FDFD /* CommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279817429B5DDA100F1FDFD /* CommonView.swift */; };
+		2279817729B5DDDD00F1FDFD /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279817629B5DDDD00F1FDFD /* CommonViewModel.swift */; };
+		2279817929B5DE1C00F1FDFD /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279817829B5DE1C00F1FDFD /* CommonExtension.swift */; };
+		2279817B29B5DF2B00F1FDFD /* CommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279817A29B5DF2B00F1FDFD /* CommonTools.swift */; };
+		2279817D29B7377600F1FDFD /* TestXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279817C29B7377600F1FDFD /* TestXIB.xib */; };
+		2279817F29B738AE00F1FDFD /* TestXIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279817E29B738AE00F1FDFD /* TestXIB.swift */; };
 		22DE8DEA29ADFE530063C1EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8DE929ADFE530063C1EC /* AppDelegate.swift */; };
 		22DE8DEC29ADFE530063C1EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8DEB29ADFE530063C1EC /* SceneDelegate.swift */; };
 		22DE8DEE29ADFE530063C1EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8DED29ADFE530063C1EC /* ViewController.swift */; };
@@ -35,6 +42,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2279817229B5DCF700F1FDFD /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
+		2279817429B5DDA100F1FDFD /* CommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonView.swift; sourceTree = "<group>"; };
+		2279817629B5DDDD00F1FDFD /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
+		2279817829B5DE1C00F1FDFD /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
+		2279817A29B5DF2B00F1FDFD /* CommonTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTools.swift; sourceTree = "<group>"; };
+		2279817C29B7377600F1FDFD /* TestXIB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestXIB.xib; sourceTree = "<group>"; };
+		2279817E29B738AE00F1FDFD /* TestXIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestXIB.swift; sourceTree = "<group>"; };
 		22DE8DE629ADFE530063C1EC /* Personal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE8DE929ADFE530063C1EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22DE8DEB29ADFE530063C1EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +119,13 @@
 				22DE8DF729ADFE550063C1EC /* Info.plist */,
 				22DE8E2429AEF6F40063C1EC /* FullPlayViewController.swift */,
 				22DE8E2629AEF7650063C1EC /* TestViewController.swift */,
+				2279817229B5DCF700F1FDFD /* CommonCell.swift */,
+				2279817429B5DDA100F1FDFD /* CommonView.swift */,
+				2279817629B5DDDD00F1FDFD /* CommonViewModel.swift */,
+				2279817829B5DE1C00F1FDFD /* CommonExtension.swift */,
+				2279817A29B5DF2B00F1FDFD /* CommonTools.swift */,
+				2279817C29B7377600F1FDFD /* TestXIB.xib */,
+				2279817E29B738AE00F1FDFD /* TestXIB.swift */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -206,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DE8DF629ADFE550063C1EC /* LaunchScreen.storyboard in Resources */,
+				2279817D29B7377600F1FDFD /* TestXIB.xib in Resources */,
 				22DE8E1829AE18160063C1EC /* H3DeviceDetail.json in Resources */,
 				22DE8DF329ADFE550063C1EC /* Assets.xcassets in Resources */,
 				22DE8DF129ADFE530063C1EC /* Main.storyboard in Resources */,
@@ -219,16 +241,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2279817929B5DE1C00F1FDFD /* CommonExtension.swift in Sources */,
 				22DE8DEE29ADFE530063C1EC /* ViewController.swift in Sources */,
 				22DE8E2729AEF7650063C1EC /* TestViewController.swift in Sources */,
+				2279817529B5DDA100F1FDFD /* CommonView.swift in Sources */,
 				22DE8E1529AE172A0063C1EC /* User_model.swift in Sources */,
 				22DE8E1629AE172A0063C1EC /* Point_model.swift in Sources */,
 				22DE8E0F29AE172A0063C1EC /* FirmwareDetails_model.swift in Sources */,
 				22DE8E0E29AE172A0063C1EC /* Relation_model.swift in Sources */,
+				2279817729B5DDDD00F1FDFD /* CommonViewModel.swift in Sources */,
 				22DE8E1429AE172A0063C1EC /* State_model.swift in Sources */,
+				2279817F29B738AE00F1FDFD /* TestXIB.swift in Sources */,
 				22DE8E1229AE172A0063C1EC /* H3DeviceDetail_model.swift in Sources */,
+				2279817329B5DCF700F1FDFD /* CommonCell.swift in Sources */,
 				22DE8E1F29AE18EF0063C1EC /* SysXp2pInfo_model.swift in Sources */,
 				22DE8DEA29ADFE530063C1EC /* AppDelegate.swift in Sources */,
+				2279817B29B5DF2B00F1FDFD /* CommonTools.swift in Sources */,
 				22DE8E2229AE18EF0063C1EC /* DevInfo_model.swift in Sources */,
 				22DE8E1029AE172A0063C1EC /* Wifi_model.swift in Sources */,
 				22DE8E2029AE18EF0063C1EC /* getDeviceXp2pInfoResult_model.swift in Sources */,

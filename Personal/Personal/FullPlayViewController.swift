@@ -7,131 +7,10 @@
 
 import UIKit
 
-class TopControl: UIView {
-    
-    let gradientLayer = CAGradientLayer()
-    
-
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor, UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor]
-        gradientLayer.locations = [0, 1]
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-        
-        layer.addSublayer(gradientLayer)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        gradientLayer.frame = self.bounds
-    }
-}
-
-class MiddleControl: UIView {
-    
-    @objc func pressLeftBtn() {
-        
-    }
-    
-    @objc func pressMiddleBtn() {
-        
-    }
-    
-    @objc func pressRightBtn() {
-        
-    }
-    
-    lazy var leftBtn: UIButton = {
-        let button = UIButton(type: .custom)
-//        button.setTitle("Left", for: .normal)
-        button.setImage(UIImage(systemName: "arrowtriangle.left.fill"), for: .normal)
-        button.addTarget(self, action: #selector(self.pressLeftBtn), for: .touchUpInside)
-        button.setTitleColor(.red, for: .normal)
-        button.isSelected = false
-        return button
-    }()
-    
-    lazy var middleBtn: UIButton = {
-        let button = UIButton(type: .custom)
-//        button.setTitle("Play", for: .normal)
-        button.setImage(UIImage(systemName: "play.fill"), for: .normal)
-        button.addTarget(self, action: #selector(self.pressMiddleBtn), for: .touchUpInside)
-        button.setTitleColor(.red, for: .normal)
-        button.isSelected = false
-        return button
-    }()
-    
-    lazy var rightBtn: UIButton = {
-        let button = UIButton(type: .custom)
-//        button.setTitle("Right", for: .normal)
-        button.setImage(UIImage(systemName: "arrowtriangle.right.fill"), for: .normal)
-        button.addTarget(self, action: #selector(self.pressRightBtn), for: .touchUpInside)
-        button.setTitleColor(.red, for: .normal)
-        button.isSelected = false
-        return button
-    }()
-    
-    
-    lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [leftBtn, middleBtn, rightBtn])
-        stack.distribution = .fillEqually
-        stack.axis = .horizontal
-        stack.spacing = 18
-        return stack
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.edges.equalTo(self)
-        }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class BottomControl: UIView {
-    
-    let gradientLayer = CAGradientLayer()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor, UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor]
-        gradientLayer.locations = [0, 1]
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-        layer.addSublayer(gradientLayer)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        gradientLayer.frame = self.bounds
-    }
-}
-
 class FullPlayViewController: UIViewController {
     
     var backBlock: ((Int)->Void)?
-    
-    
+
     func backBlockFunc(backBlock: @escaping (Int)->Void) {
         self.backBlock = backBlock
     }
@@ -147,6 +26,9 @@ class FullPlayViewController: UIViewController {
         tableView.register(ErrorCell.self, forCellReuseIdentifier: "ErrorViewModel")
         tableView.register(CardCell.self, forCellReuseIdentifier: "CardViewModel")
         tableView.register(EatOrFoodCell.self, forCellReuseIdentifier: "EatOrFoodViewModel")
+        
+        tableView.register(PlanOrAddFoldCell.self, forCellReuseIdentifier: "PlanOrAddFoldViewModel")
+        tableView.register(PlanOrAddUnFoldCell.self, forCellReuseIdentifier: "PlanOrAddUnFoldViewModel")
         
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1)
@@ -166,21 +48,24 @@ class FullPlayViewController: UIViewController {
         if self.backBlock != nil {
             self.backBlock!(5)
         }
-
     }
     
-    @objc func gesture() {
+    @objc func gesture(gesture: UITapGestureRecognizer) {
+        
+        let point = gesture.location(in: self.placeView)
+        if CGRectContainsPoint(self.tableView.frame, point) {
+            return
+        }
         
         haveShow = !haveShow
         
         if haveShow {
             hideAnimation()
-            hideTableViewAnimation()
+//            hideTableViewAnimation()
         } else {
             showAnimation()
-            showTableViewAnimation()
+//            showTableViewAnimation()
         }
-       
     }
     
     func startTimer() {
@@ -213,8 +98,8 @@ class FullPlayViewController: UIViewController {
     }
     
     // 视频播放View
-    lazy var placeView: UIView = {
-        let placeView = UIView()
+    lazy var placeView: UIButton = {
+        let placeView = UIButton()
         placeView.backgroundColor = .black
         placeView.layer.borderWidth = 1
         placeView.layer.borderColor = UIColor.black.cgColor
@@ -222,7 +107,6 @@ class FullPlayViewController: UIViewController {
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.gesture))
         placeView.addGestureRecognizer(gesture)
-        
         return placeView
     }()
     
@@ -241,8 +125,16 @@ class FullPlayViewController: UIViewController {
         return view
     }()
     
+    lazy var leftControl: LeftControl = {
+        let view = LeftControl()
+        return view
+    }()
     
-    
+    lazy var rightControl: RightControl = {
+        let view = RightControl()
+        return view
+    }()
+
     lazy var fullBtn: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("< 返回", for: .normal)
@@ -276,17 +168,13 @@ class FullPlayViewController: UIViewController {
         
         self.view.backgroundColor = .black
         
-        
-        
         self.view.addSubview(placeView)
         placeView.snp.makeConstraints { make in
-//            make.edges.equalTo(self.view).inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
             make.top.equalTo(self.view.snp_topMargin)
             make.left.equalTo(self.view.snp_leftMargin)
             make.right.equalTo(self.view.snp_rightMargin)
             make.bottom.equalTo(self.view.snp_bottomMargin)
         }
-        
         
         let imageV = UIImageView(image: UIImage(named: "IMG_4298"))
         placeView.addSubview(imageV)
@@ -297,6 +185,8 @@ class FullPlayViewController: UIViewController {
         placeView.addSubview(topControlView)
         placeView.addSubview(bottomControlView)
         placeView.addSubview(middleControlView)
+        placeView.addSubview(leftControl)
+        placeView.addSubview(rightControl)
         
         topControlView.snp.makeConstraints { make in
             make.top.equalTo(placeView)
@@ -312,14 +202,47 @@ class FullPlayViewController: UIViewController {
             make.height.equalTo(70)
         }
         
+        leftControl.snp.makeConstraints { make in
+            make.left.equalTo(placeView)
+            make.top.equalTo(placeView.snp_topMargin).offset(70)
+            make.bottom.equalTo(placeView.snp_bottomMargin).offset(-70)
+            make.width.equalTo(70)
+        }
+        
+        rightControl.snp.makeConstraints { make in
+            make.right.equalTo(placeView)
+            make.top.equalTo(placeView.snp_topMargin).offset(70)
+            make.bottom.equalTo(placeView.snp_bottomMargin).offset(-70)
+            make.width.equalTo(70)
+        }
+        
         middleControlView.snp.makeConstraints { make in
             make.center.equalTo(placeView)
             make.size.equalTo(CGSize(width: 220, height: 60))
         }
         
+        self.leftControl.bindViewModel(viewModel: LeftControlViewModel(qualityStr: "Hello", speedStr: "world")) { type in
+            print(type)
+        }
+        
         let topSect = Sects(rows: [VideoViewModel(), ErrorViewModel(), CardViewModel()])
         
-        let bottomSect = Sects(rows: [EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel(), EatOrFoodViewModel()])
+        let bottomSect = Sects(rows: [])
+        
+        for i in 0..<8 {
+            let viewModel = PlanOrAddUnFoldViewModel { type in
+                print(i)
+                
+                let model = bottomSect.rows[i] as? PlanOrAddUnFoldViewModel
+                
+                if let model = model {
+                    model.isFold = !model.isFold
+                    self.tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .fade)
+                }
+            }
+            viewModel.isFold = false
+            bottomSect.rows.append(viewModel)
+        }
         
 //        self.dataSource.append(topSect)
         self.dataSource.append(bottomSect)
@@ -345,8 +268,14 @@ class FullPlayViewController: UIViewController {
 //        NotificationCenter.default.addObserver(self, selector: #selector(appBecomeActive), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
         startTimer()
+        
+//        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tableViewGesture))
+//        self.tableView.addGestureRecognizer(gesture)
     }
     
+    @objc func tableViewGesture() {
+        
+    }
     
     func showTableViewAnimation() {
         UIView.animate(withDuration: 0.5) {
@@ -405,45 +334,6 @@ class FullPlayViewController: UIViewController {
     }
 }
 
-extension FullPlayViewController {
-
-    func setViewController(canLandscape: Bool) {
-        let myAppDelegate = UIApplication.shared.delegate as? AppDelegate
-        myAppDelegate?.allowRotation = canLandscape
-    }
-    
-    func setViewController(isLanscape: Bool) {
-        
-        if isLanscape {
-            if #available(iOS 16.0, *) {
-                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-                windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: .landscapeRight)) { error in
-                    print(error)
-                    
-                }
-                self.navigationController?.setNeedsUpdateOfSupportedInterfaceOrientations()
-                self.setNeedsUpdateOfSupportedInterfaceOrientations()
-            } else {
-                // Fallback on earlier versions
-                UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
-            }
-        } else {
-            if #available(iOS 16.0, *) {
-                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-                windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait))
-                self.navigationController?.setNeedsUpdateOfSupportedInterfaceOrientations()
-                self.setNeedsUpdateOfSupportedInterfaceOrientations()
-            } else {
-                // Fallback on earlier versions
-                UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
-            }
-        }
-    }
-}
-
-
-
-
 extension FullPlayViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.dataSource.count
@@ -457,10 +347,11 @@ extension FullPlayViewController: UITableViewDelegate, UITableViewDataSource {
         
         let viewModel = self.dataSource[indexPath.section].rows[indexPath.row]
         
-        var baseCell = tableView.dequeueReusableCell(withIdentifier: viewModel.reuseIdentifier())
+        var baseCell = tableView.dequeueReusableCell(withIdentifier: viewModel.reuseIdentifier()) as? BaseCell
         if baseCell == nil {
-            baseCell = UITableViewCell(style: .default, reuseIdentifier: viewModel.reuseIdentifier())
+            baseCell = UITableViewCell(style: .default, reuseIdentifier: viewModel.reuseIdentifier()) as? BaseCell
         }
+        baseCell?.bindViewModel(viewModel)
         
         return baseCell!
     }
@@ -469,24 +360,11 @@ extension FullPlayViewController: UITableViewDelegate, UITableViewDataSource {
         return section == 1 ? "今日吃播" : ""
     }
     
-    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //        return section == 4 ? 40 : 10
-    //    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = TapBarView()
-        return section == 1 ? view : UIView()
+        view.backgroundColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1)
+        return section == 0 ? view : UIView()
     }
-    
-    //    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    //        return section == 4 ? 40 : 100
-    //    }
-    //
-    //    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-    //        let view = UIView()
-    //        view.backgroundColor = .green
-    //        return view
-    //    }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
