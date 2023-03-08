@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,13 +12,19 @@
 		2279817729B5DDDD00F1FDFD /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279817629B5DDDD00F1FDFD /* CommonViewModel.swift */; };
 		2279817929B5DE1C00F1FDFD /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279817829B5DE1C00F1FDFD /* CommonExtension.swift */; };
 		2279817B29B5DF2B00F1FDFD /* CommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279817A29B5DF2B00F1FDFD /* CommonTools.swift */; };
-		2279817D29B7377600F1FDFD /* TestXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279817C29B7377600F1FDFD /* TestXIB.xib */; };
-		2279817F29B738AE00F1FDFD /* TestXIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279817E29B738AE00F1FDFD /* TestXIB.swift */; };
 		2279818129B7527F00F1FDFD /* OpenCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279818029B7527F00F1FDFD /* OpenCloudView.swift */; };
 		2279818329B752AA00F1FDFD /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279818229B752AA00F1FDFD /* OfflineView.swift */; };
 		2279818529B752BC00F1FDFD /* OpenCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279818429B752BC00F1FDFD /* OpenCameraView.swift */; };
 		2279818729B752CA00F1FDFD /* VideoLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279818629B752CA00F1FDFD /* VideoLoadingView.swift */; };
 		2279818929B7571000F1FDFD /* VideoOutDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279818829B7571000F1FDFD /* VideoOutDateView.swift */; };
+		2279818D29B8314900F1FDFD /* OpenCloudView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279818C29B8314900F1FDFD /* OpenCloudView.xib */; };
+		2279819029B83C1300F1FDFD /* VideoOutDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279818F29B83C1300F1FDFD /* VideoOutDateView.xib */; };
+		2279819229B83FB700F1FDFD /* OpenCameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279819129B83FB700F1FDFD /* OpenCameraView.xib */; };
+		2279819429B859C400F1FDFD /* OfflineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279819329B859C400F1FDFD /* OfflineView.xib */; };
+		2279819629B85D6400F1FDFD /* VideoLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279819529B85D6400F1FDFD /* VideoLoadingView.xib */; };
+		2279819829B85EE600F1FDFD /* VideoTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279819729B85EE600F1FDFD /* VideoTipsView.swift */; };
+		2279819A29B85EF200F1FDFD /* VideoTipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2279819929B85EF200F1FDFD /* VideoTipsView.xib */; };
+		227981FD29B8A8E600F1FDFD /* d4sh.json in Resources */ = {isa = PBXBuildFile; fileRef = 227981FC29B8A8E600F1FDFD /* d4sh.json */; };
 		22DE8DEA29ADFE530063C1EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8DE929ADFE530063C1EC /* AppDelegate.swift */; };
 		22DE8DEC29ADFE530063C1EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8DEB29ADFE530063C1EC /* SceneDelegate.swift */; };
 		22DE8DEE29ADFE530063C1EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8DED29ADFE530063C1EC /* ViewController.swift */; };
@@ -44,21 +50,29 @@
 		22DE8E2329AE18EF0063C1EC /* Value_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E1E29AE18EF0063C1EC /* Value_model.swift */; };
 		22DE8E2529AEF6F40063C1EC /* FullPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E2429AEF6F40063C1EC /* FullPlayViewController.swift */; };
 		22DE8E2729AEF7650063C1EC /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE8E2629AEF7650063C1EC /* TestViewController.swift */; };
+		E293911B37D7167437A8AF80 /* Pods_Personal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1E3F1CF491D91F6C35E0C0 /* Pods_Personal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1E3F1CF491D91F6C35E0C0 /* Pods_Personal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Personal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2279817229B5DCF700F1FDFD /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
 		2279817429B5DDA100F1FDFD /* CommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonView.swift; sourceTree = "<group>"; };
 		2279817629B5DDDD00F1FDFD /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		2279817829B5DE1C00F1FDFD /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		2279817A29B5DF2B00F1FDFD /* CommonTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTools.swift; sourceTree = "<group>"; };
-		2279817C29B7377600F1FDFD /* TestXIB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestXIB.xib; sourceTree = "<group>"; };
-		2279817E29B738AE00F1FDFD /* TestXIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestXIB.swift; sourceTree = "<group>"; };
 		2279818029B7527F00F1FDFD /* OpenCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCloudView.swift; sourceTree = "<group>"; };
 		2279818229B752AA00F1FDFD /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		2279818429B752BC00F1FDFD /* OpenCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCameraView.swift; sourceTree = "<group>"; };
 		2279818629B752CA00F1FDFD /* VideoLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLoadingView.swift; sourceTree = "<group>"; };
 		2279818829B7571000F1FDFD /* VideoOutDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoOutDateView.swift; sourceTree = "<group>"; };
+		2279818C29B8314900F1FDFD /* OpenCloudView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenCloudView.xib; sourceTree = "<group>"; };
+		2279818F29B83C1300F1FDFD /* VideoOutDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoOutDateView.xib; sourceTree = "<group>"; };
+		2279819129B83FB700F1FDFD /* OpenCameraView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenCameraView.xib; sourceTree = "<group>"; };
+		2279819329B859C400F1FDFD /* OfflineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfflineView.xib; sourceTree = "<group>"; };
+		2279819529B85D6400F1FDFD /* VideoLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoLoadingView.xib; sourceTree = "<group>"; };
+		2279819729B85EE600F1FDFD /* VideoTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTipsView.swift; sourceTree = "<group>"; };
+		2279819929B85EF200F1FDFD /* VideoTipsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTipsView.xib; sourceTree = "<group>"; };
+		227981FC29B8A8E600F1FDFD /* d4sh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = d4sh.json; sourceTree = "<group>"; };
 		22DE8DE629ADFE530063C1EC /* Personal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE8DE929ADFE530063C1EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22DE8DEB29ADFE530063C1EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +98,8 @@
 		22DE8E1E29AE18EF0063C1EC /* Value_model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value_model.swift; sourceTree = "<group>"; };
 		22DE8E2429AEF6F40063C1EC /* FullPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPlayViewController.swift; sourceTree = "<group>"; };
 		22DE8E2629AEF7650063C1EC /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		90A1DA11B8A56DA7335046E2 /* Pods-Personal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Personal.release.xcconfig"; path = "Target Support Files/Pods-Personal/Pods-Personal.release.xcconfig"; sourceTree = "<group>"; };
+		BA6105BFD33F017D0A821448 /* Pods-Personal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Personal.debug.xcconfig"; path = "Target Support Files/Pods-Personal/Pods-Personal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,17 +109,39 @@
 			files = (
 				22DE8DFF29AE02470063C1EC /* SwiftyJSON in Frameworks */,
 				22DE8E0229AE02850063C1EC /* SnapKit in Frameworks */,
+				E293911B37D7167437A8AF80 /* Pods_Personal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2279818E29B83B5C00F1FDFD /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2279818029B7527F00F1FDFD /* OpenCloudView.swift */,
+				2279818C29B8314900F1FDFD /* OpenCloudView.xib */,
+				2279818829B7571000F1FDFD /* VideoOutDateView.swift */,
+				2279818F29B83C1300F1FDFD /* VideoOutDateView.xib */,
+				2279818429B752BC00F1FDFD /* OpenCameraView.swift */,
+				2279819129B83FB700F1FDFD /* OpenCameraView.xib */,
+				2279818229B752AA00F1FDFD /* OfflineView.swift */,
+				2279819329B859C400F1FDFD /* OfflineView.xib */,
+				2279818629B752CA00F1FDFD /* VideoLoadingView.swift */,
+				2279819529B85D6400F1FDFD /* VideoLoadingView.xib */,
+				2279819729B85EE600F1FDFD /* VideoTipsView.swift */,
+				2279819929B85EF200F1FDFD /* VideoTipsView.xib */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 		22DE8DDD29ADFE530063C1EC = {
 			isa = PBXGroup;
 			children = (
 				22DE8DE829ADFE530063C1EC /* Personal */,
 				22DE8DE729ADFE530063C1EC /* Products */,
+				65939F1DA8593630F6EC8C0A /* Pods */,
+				303FE434D6A0D6C45EE30D29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,29 +156,24 @@
 		22DE8DE829ADFE530063C1EC /* Personal */ = {
 			isa = PBXGroup;
 			children = (
-				22DE8E1929AE18D80063C1EC /* H3P2PInfo */,
-				22DE8E0429AE16830063C1EC /* H3DeviceDetail */,
+				227981FC29B8A8E600F1FDFD /* d4sh.json */,
+				2279818E29B83B5C00F1FDFD /* ViewComponents */,
 				22DE8DE929ADFE530063C1EC /* AppDelegate.swift */,
-				22DE8DEB29ADFE530063C1EC /* SceneDelegate.swift */,
-				22DE8DED29ADFE530063C1EC /* ViewController.swift */,
-				22DE8DEF29ADFE530063C1EC /* Main.storyboard */,
 				22DE8DF229ADFE550063C1EC /* Assets.xcassets */,
-				22DE8DF429ADFE550063C1EC /* LaunchScreen.storyboard */,
-				22DE8DF729ADFE550063C1EC /* Info.plist */,
-				22DE8E2429AEF6F40063C1EC /* FullPlayViewController.swift */,
-				22DE8E2629AEF7650063C1EC /* TestViewController.swift */,
 				2279817229B5DCF700F1FDFD /* CommonCell.swift */,
-				2279817429B5DDA100F1FDFD /* CommonView.swift */,
-				2279817629B5DDDD00F1FDFD /* CommonViewModel.swift */,
 				2279817829B5DE1C00F1FDFD /* CommonExtension.swift */,
 				2279817A29B5DF2B00F1FDFD /* CommonTools.swift */,
-				2279817C29B7377600F1FDFD /* TestXIB.xib */,
-				2279817E29B738AE00F1FDFD /* TestXIB.swift */,
-				2279818029B7527F00F1FDFD /* OpenCloudView.swift */,
-				2279818229B752AA00F1FDFD /* OfflineView.swift */,
-				2279818429B752BC00F1FDFD /* OpenCameraView.swift */,
-				2279818629B752CA00F1FDFD /* VideoLoadingView.swift */,
-				2279818829B7571000F1FDFD /* VideoOutDateView.swift */,
+				2279817429B5DDA100F1FDFD /* CommonView.swift */,
+				2279817629B5DDDD00F1FDFD /* CommonViewModel.swift */,
+				22DE8E2429AEF6F40063C1EC /* FullPlayViewController.swift */,
+				22DE8E0429AE16830063C1EC /* H3DeviceDetail */,
+				22DE8E1929AE18D80063C1EC /* H3P2PInfo */,
+				22DE8DF729ADFE550063C1EC /* Info.plist */,
+				22DE8DF429ADFE550063C1EC /* LaunchScreen.storyboard */,
+				22DE8DEF29ADFE530063C1EC /* Main.storyboard */,
+				22DE8DEB29ADFE530063C1EC /* SceneDelegate.swift */,
+				22DE8E2629AEF7650063C1EC /* TestViewController.swift */,
+				22DE8DED29ADFE530063C1EC /* ViewController.swift */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -174,6 +207,23 @@
 			path = H3P2PInfo;
 			sourceTree = "<group>";
 		};
+		303FE434D6A0D6C45EE30D29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B1E3F1CF491D91F6C35E0C0 /* Pods_Personal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65939F1DA8593630F6EC8C0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA6105BFD33F017D0A821448 /* Pods-Personal.debug.xcconfig */,
+				90A1DA11B8A56DA7335046E2 /* Pods-Personal.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22DE8DFA29ADFE550063C1EC /* Build configuration list for PBXNativeTarget "Personal" */;
 			buildPhases = (
+				CB5545B98ECCC74FFDCEE311 /* [CP] Check Pods Manifest.lock */,
 				22DE8DE229ADFE530063C1EC /* Sources */,
 				22DE8DE329ADFE530063C1EC /* Frameworks */,
 				22DE8DE429ADFE530063C1EC /* Resources */,
+				D2E90A2D970DFFC452277F53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,7 +266,7 @@
 				};
 			};
 			buildConfigurationList = 22DE8DE129ADFE530063C1EC /* Build configuration list for PBXProject "Personal" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -225,7 +277,6 @@
 			packageReferences = (
 				22DE8DFD29AE02470063C1EC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				22DE8E0029AE02850063C1EC /* XCRemoteSwiftPackageReference "SnapKit" */,
-				22DE8E0329AE07A50063C1EC /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 22DE8DE729ADFE530063C1EC /* Products */;
 			projectDirPath = "";
@@ -241,15 +292,63 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227981FD29B8A8E600F1FDFD /* d4sh.json in Resources */,
 				22DE8DF629ADFE550063C1EC /* LaunchScreen.storyboard in Resources */,
-				2279817D29B7377600F1FDFD /* TestXIB.xib in Resources */,
 				22DE8E1829AE18160063C1EC /* H3DeviceDetail.json in Resources */,
 				22DE8DF329ADFE550063C1EC /* Assets.xcassets in Resources */,
+				2279819029B83C1300F1FDFD /* VideoOutDateView.xib in Resources */,
 				22DE8DF129ADFE530063C1EC /* Main.storyboard in Resources */,
+				2279819229B83FB700F1FDFD /* OpenCameraView.xib in Resources */,
+				2279819A29B85EF200F1FDFD /* VideoTipsView.xib in Resources */,
+				2279819429B859C400F1FDFD /* OfflineView.xib in Resources */,
+				2279819629B85D6400F1FDFD /* VideoLoadingView.xib in Resources */,
+				2279818D29B8314900F1FDFD /* OpenCloudView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CB5545B98ECCC74FFDCEE311 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Personal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2E90A2D970DFFC452277F53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Personal/Pods-Personal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Personal/Pods-Personal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Personal/Pods-Personal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22DE8DE229ADFE530063C1EC /* Sources */ = {
@@ -267,7 +366,6 @@
 				22DE8E0E29AE172A0063C1EC /* Relation_model.swift in Sources */,
 				2279817729B5DDDD00F1FDFD /* CommonViewModel.swift in Sources */,
 				22DE8E1429AE172A0063C1EC /* State_model.swift in Sources */,
-				2279817F29B738AE00F1FDFD /* TestXIB.swift in Sources */,
 				2279818329B752AA00F1FDFD /* OfflineView.swift in Sources */,
 				22DE8E1229AE172A0063C1EC /* H3DeviceDetail_model.swift in Sources */,
 				2279817329B5DCF700F1FDFD /* CommonCell.swift in Sources */,
@@ -275,6 +373,7 @@
 				22DE8DEA29ADFE530063C1EC /* AppDelegate.swift in Sources */,
 				2279818729B752CA00F1FDFD /* VideoLoadingView.swift in Sources */,
 				2279817B29B5DF2B00F1FDFD /* CommonTools.swift in Sources */,
+				2279819829B85EE600F1FDFD /* VideoTipsView.swift in Sources */,
 				22DE8E2229AE18EF0063C1EC /* DevInfo_model.swift in Sources */,
 				22DE8E1029AE172A0063C1EC /* Wifi_model.swift in Sources */,
 				22DE8E2029AE18EF0063C1EC /* getDeviceXp2pInfoResult_model.swift in Sources */,
@@ -427,6 +526,7 @@
 		};
 		22DE8DFB29ADFE550063C1EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6105BFD33F017D0A821448 /* Pods-Personal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -454,6 +554,7 @@
 		};
 		22DE8DFC29ADFE550063C1EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90A1DA11B8A56DA7335046E2 /* Pods-Personal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -517,14 +618,6 @@
 			requirement = {
 				branch = develop;
 				kind = branch;
-			};
-		};
-		22DE8E0329AE07A50063C1EC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

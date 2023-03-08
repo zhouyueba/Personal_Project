@@ -10,6 +10,8 @@ import SnapKit
 import SwiftyJSON
 import Combine
 
+
+
 protocol ModelProtocol {
     
 }
@@ -198,23 +200,33 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? VideoCell
             
             if let cell = cell {
+                
+                for view in cell.placeView.subviews {
+                    view.removeFromSuperview()
+                }
+                
                 if indexPath.row == 1 {
-                    let view = OpenCloudView()
+                    
+                    let view = VideoTipsView()
                     cell.placeView.addSubview(view)
                     view.snp.makeConstraints { make in
                         make.center.equalTo(cell.placeView)
-//                        make.size.equalTo(CGSize(width: 200, height: 90))
                     }
-                    
                 }
                 
                 if indexPath.row == 2 {
-                    
+                    let view = OfflineView()
+                    cell.placeView.addSubview(view)
+                    view.snp.makeConstraints { make in
+                        make.center.equalTo(cell.placeView)
+                    }
+                }
+                
+                if indexPath.row == 3 {
+                    let vc = TestViewController()
+                    self.present(vc, animated: true)
                 }
             }
-        
-            
-         
         }
     }
 }

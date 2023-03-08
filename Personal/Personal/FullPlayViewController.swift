@@ -176,11 +176,11 @@ class FullPlayViewController: UIViewController {
             make.bottom.equalTo(self.view.snp_bottomMargin)
         }
         
-        let imageV = UIImageView(image: UIImage(named: "IMG_4298"))
-        placeView.addSubview(imageV)
-        imageV.snp.makeConstraints { make in
-            make.edges.equalTo(placeView)
-        }
+//        let imageV = UIImageView(image: UIImage(named: "IMG_4298"))
+//        placeView.addSubview(imageV)
+//        imageV.snp.makeConstraints { make in
+//            make.edges.equalTo(placeView)
+//        }
         
         placeView.addSubview(topControlView)
         placeView.addSubview(bottomControlView)
@@ -225,11 +225,11 @@ class FullPlayViewController: UIViewController {
             print(type)
             
             if type == .Shot {
-                let view = OpenCloudView()
-                self.placeView.addSubview(view)
-                view.snp.makeConstraints { make in
-                    make.center.equalTo(self.placeView)
-                }
+//                let view = OpenCloudView()
+//                self.placeView.addSubview(view)
+//                view.snp.makeConstraints { make in
+//                    make.center.equalTo(self.placeView)
+//                }
             }
             
             if type == .Record {

@@ -1,0 +1,184 @@
+{
+    "result": {
+        "createdAt": "2022-10-25T18:44:17.879Z",
+        "firmwareDetails": [{
+            "module": "app",
+            "version": 230301
+        }],
+        "hardware": 1,
+        "id": 7,
+        "mac": "aabbccdd3306",
+        "relation": {
+            "userId": "1030421"
+        },
+        "secret": "e9cd35e2d6e386fb",
+    
+    "settings": {
+        "desiccantNotify": 10,
+        "feedNotify": 1,
+        "foodNotify": 1,
+        "lowBatteryNotify": 1,
+        "foodWarn": 0,
+        "foodWarnRange": [],
+        "lightMode": 0,
+        "lightMultiRange": [],
+        "lightConfig": 1,
+        "toneMode": 1,
+        "toneMultiRange": [],
+        "toneConfig": 1,
+        "manualLock": 1,
+        "bucketName1": "rootfs",
+        "bucketName2": "rootfs",
+        "conservation": 0,
+        "cTime": 1656580275,
+        "camera": 1,
+        "microphone": 0,
+        "night": 1,
+        "timeDisplay": 1,
+        "feedPicture": 1,
+        "eatVideo": 0,
+        "preLive": 1,
+        "liveEncrypt": 1,
+        "moveDetection": 0,
+        "moveSensitivity": 1,
+        "moveNotify": 1,
+        "petDetection": 0,
+        "petSensitivity": 1,
+        "petNotify": 1,
+        "eatDetection": 0,
+        "eatSensitivity": 1,
+        "eatNotify": 1,
+        "detectInterval": 0,
+        "detectConfig": 1,
+        "detectMultiRange": 1,
+        "soundEnable": 1,
+        "systemSoundEnable": 1,
+        "feedSound": 0,
+        "volume": 1,
+        "selectedSound": 1,
+        "surplusControl": 0,
+        "highlight": 1,
+        "upload": 1
+    },
+    "sn": "20221019H30006",
+    "state": {
+        "desiccantLeftDays": 0,
+        "errorLevel": 0,
+        "errorCode": "",
+        "errorMsg": "",
+        "errorDetail": "",
+        "food1": 1,
+        "food2": 1,
+        "bowel": 1,
+        "feeding": 1,
+        "eating": 1,
+        "door": 1,
+        "ota": 1,
+        "overall": 1,
+        "pim": 1,
+        "conservationStatus": 1,
+        "batteryStatus": 1,
+        "batteryPower": 0,
+        "bowel": 1,
+        "feedState": {
+            "feedTimes": {
+                
+            },
+            "times": "aabbccdd3306",
+            "planAmountTotal1": 69,
+            "realAmountTotal1": 69,
+            "addAmountTotal1": 69,
+            "planAmountTotal2": 69,
+            "realAmountTotal2": 69,
+            "addAmountTotal2": 69,
+            "planRealAmountTotal1": 69,
+            "planRealAmountTotal2": 69,
+            "realAmountTotal1": 69,
+            "realAmountTotal1": 69
+        },
+        "multiFeedItem": {
+            "feedDailyList": [
+                {
+                    "items": [],
+                    "repeats": 1,
+                    "suspended": 0
+                },
+                {
+                    "items": [],
+                    "repeats": 2,
+                    "suspended": 0
+                },
+                {
+                    "items": [],
+                    "repeats": 3,
+                    "suspended": 0
+                },
+                {
+                    "items": [],
+                    "repeats": 4,
+                    "suspended": 0
+                },
+                {
+                    "items": [],
+                    "repeats": 5,
+                    "suspended": 0
+                },
+                {
+                    "items": [],
+                    "repeats": 6,
+                    "suspended": 0
+                },
+                {
+                    "items": [],
+                    "repeats": 7,
+                    "suspended": 0
+                }
+            ],
+            "isExecuted": 0,
+            "userId": "0"
+        },
+        "cloudProduct": {
+            "serviceId": 1,
+            "name": "",
+            "shortName": "",
+            "orderId": 1,
+            "skuId": 1,
+            "subscribe": 1,
+            "cloudStorage": "ENV",
+            "highlight": 1,
+            "lapse": 1,
+            "cycle": 1,
+            "serviceTime": 12345,
+            "serviceUnit": "",
+            "workTime": "",
+            "workIndate": ""
+        },
+        "serviceStatus": 7,
+        "timezone": 7,
+        "shared": {
+            "gender": 1,
+            "id": "1030421",
+            "nick": "times",
+            "point": {
+                "ownerNick": "出栏猪",
+                "petNick": ""
+            },
+            "avatar": "http:\/\/sandbox.img5.petkit.cn\/banner\/2022\/10\/13\/6347d7c8a344e5000b575c02PxkreS7Kl"
+        },
+        "deviceShared": {
+            "ownerNick": 1,
+            "ownerId": "1030421",
+            "nick": "times",
+            "pets": [
+                {
+                    "id": "出栏猪",
+                    "avatar": "",
+                    "name": ""
+                }]
+        },
+        "shareOpen": 1
+    }
+}
+
+}
+
