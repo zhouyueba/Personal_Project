@@ -8,7 +8,7 @@
 import UIKit
 
 class OfflineView: UIView {
-
+    
     @IBOutlet weak var topImgV: UIImageView!
     @IBOutlet weak var bottomTipsL: UILabel!
     
@@ -24,8 +24,8 @@ class OfflineView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       
-       configurePage()
+        
+        configurePage()
     }
     
     required init?(coder: NSCoder) {
@@ -57,7 +57,7 @@ class OfflineView: UIView {
             make.width.lessThanOrEqualTo(self).offset(-32)
             make.size.equalTo(CGSize(width: 44, height: 44))
         }
-
+        
         self.bottomTipsL.snp.makeConstraints { make in
             make.bottom.equalTo(-16)
             make.width.greaterThanOrEqualTo(98)

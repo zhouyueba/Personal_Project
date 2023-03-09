@@ -7,22 +7,32 @@
 
 import UIKit
 
+enum OpenCloudEvents {
+    case OpenCloud
+}
+
 class OpenCloudView: UIView {
     
-    private var viewModel: OpenCloudViewModel?
-
+    var events: ((OpenCloudEvents)->Void)?
+    
+    convenience init(events event: @escaping (OpenCloudEvents)->Void) {
+        self.init()
+        self.events = event
+    }
+    
     @IBOutlet weak var topTextL: UILabel!
     
     @IBOutlet weak var bottomBtn: UIButton!
     
     @IBAction func openCloud(_ sender: UIButton) {
         
-//        print("open cloud")
+        print("open cloud")
         
-        self.viewModel?.openCloud()
-        
+        if self.events != nil {
+            self.events!(.OpenCloud)
+        }
     }
- 
+    
     lazy var contentView: UIView = {
         
         let className = type(of: self)
@@ -35,8 +45,8 @@ class OpenCloudView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       
-       configurePage()
+        
+        configurePage()
     }
     
     required init?(coder: NSCoder) {
@@ -69,27 +79,13 @@ class OpenCloudView: UIView {
             make.centerX.equalTo(contentView)
             make.width.lessThanOrEqualTo(self).offset(-32)
         }
-
+        
         self.bottomBtn.snp.makeConstraints { make in
             make.bottom.equalTo(-16)
             make.width.greaterThanOrEqualTo(98)
             make.height.equalTo(34)
             make.centerX.equalTo(contentView)
             make.top.equalTo(self.topTextL.snp.bottom).offset(30)
-        }
-    }
-}
-
-extension OpenCloudView: StatusViewProrocol {
-    
-    func bind(viewModel: BaseViewModel) {
-        
-        if let viewModel = viewModel as? OpenCloudViewModel {
-            
-            self.viewModel = viewModel
-            
-            self.topTextL.text = viewModel.topText
-            self.bottomBtn.setTitle(viewModel.bottomText, for: .normal)
         }
     }
 }

@@ -9,6 +9,7 @@ import UIKit
 import WebKit
 import RxSwift
 import RxCocoa
+import SwiftyJSON
 
 @objc enum VideoStyle: Int {
     case Offline = 0
@@ -120,9 +121,25 @@ class TestViewController: UIViewController {
         }.disposed(by: dispose)
         
         
-        let path = Bundle.main.path(forResource: "H3DeviceDetail", ofType: "json")
-        let str
-        let result = Result_model(json: "")
+        let path = Bundle.main.path(forResource: "d4sh", ofType: "json")
+        
+//        let url = URL(fileURLWithPath: path)
+        
+        if let path = path {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+                let jsonStr = String(data: data, encoding: .utf8)
+                
+                if let json = try? JSON(data: data) {
+                    let deviceDetail = D4sh_model(json: json)
+                    print(jsonStr)
+                    
+                }
+                
+            }
+            
+        }
+        
+        
         
         
 //        let outDateVM = VideoOutDateViewModel(topText: "视频已过期", bottomText: "了解更多")

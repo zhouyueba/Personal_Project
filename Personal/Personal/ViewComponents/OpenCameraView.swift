@@ -7,13 +7,28 @@
 
 import UIKit
 
-class OpenCameraView: UIView {
+enum OpenCameraEvents {
+    case OpenCamera
+}
 
+class OpenCameraView: UIView {
+    
+    var events: ((OpenCameraEvents)->Void)?
+    
+    convenience init(events event: @escaping (OpenCameraEvents)->Void) {
+        self.init()
+        self.events = event
+    }
+    
     @IBOutlet weak var topTipsL: UILabel!
     @IBOutlet weak var bottomBtn: UIButton!
     
     @IBAction func openCamera(_ sender: UIButton) {
         print("open camera")
+        
+        if self.events != nil {
+            self.events!(.OpenCamera)
+        }
     }
     
     lazy var contentView: UIView = {
@@ -28,8 +43,8 @@ class OpenCameraView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       
-       configurePage()
+        
+        configurePage()
     }
     
     required init?(coder: NSCoder) {
@@ -60,7 +75,7 @@ class OpenCameraView: UIView {
             make.centerX.equalTo(contentView)
             make.width.lessThanOrEqualTo(self).offset(-32)
         }
-
+        
         self.bottomBtn.snp.makeConstraints { make in
             make.bottom.equalTo(-16)
             make.width.greaterThanOrEqualTo(98)

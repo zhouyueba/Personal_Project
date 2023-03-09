@@ -19,12 +19,12 @@
         "foodNotify": 1,
         "lowBatteryNotify": 1,
         "foodWarn": 0,
-        "foodWarnRange": [],
+        "foodWarnRange": [1,2],
         "lightMode": 0,
-        "lightMultiRange": [],
+        "lightMultiRange": [1,2],
         "lightConfig": 1,
         "toneMode": 1,
-        "toneMultiRange": [],
+        "toneMultiRange": [1,2],
         "toneConfig": 1,
         "manualLock": 1,
         "bucketName1": "rootfs",
@@ -99,38 +99,8 @@
         "multiFeedItem": {
             "feedDailyList": [
                 {
-                    "items": [],
+                    "items": [1,2],
                     "repeats": 1,
-                    "suspended": 0
-                },
-                {
-                    "items": [],
-                    "repeats": 2,
-                    "suspended": 0
-                },
-                {
-                    "items": [],
-                    "repeats": 3,
-                    "suspended": 0
-                },
-                {
-                    "items": [],
-                    "repeats": 4,
-                    "suspended": 0
-                },
-                {
-                    "items": [],
-                    "repeats": 5,
-                    "suspended": 0
-                },
-                {
-                    "items": [],
-                    "repeats": 6,
-                    "suspended": 0
-                },
-                {
-                    "items": [],
-                    "repeats": 7,
                     "suspended": 0
                 }
             ],
@@ -181,4 +151,5 @@
 }
 
 }
+
 

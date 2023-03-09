@@ -8,7 +8,7 @@
 import UIKit
 
 class VideoTipsView: UIView {
-
+    
     @IBOutlet weak var bottomTipsL: UILabel!
     
     lazy var contentView: UIView = {
@@ -23,8 +23,8 @@ class VideoTipsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       
-       configurePage()
+        
+        configurePage()
     }
     
     required init?(coder: NSCoder) {
@@ -49,7 +49,7 @@ class VideoTipsView: UIView {
             make.edges.equalTo(self)
             make.width.lessThanOrEqualToSuperview()
         }
-
+        
         self.bottomTipsL.snp.makeConstraints { make in
             make.top.equalTo(16)
             make.bottom.equalTo(-16)

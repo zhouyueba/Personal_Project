@@ -110,13 +110,12 @@ class FullPlayViewController: UIViewController {
         return placeView
     }()
     
-    lazy var topControlView: TopControl = {
-        let view = TopControl()
-        return view
-    }()
+    private var topControlView: TopControlView = TopControlView()
     
-    lazy var bottomControlView: BottomControl = {
-        let view = BottomControl()
+ 
+    
+    lazy var bottomControlView: BottomControlView = {
+        let view = BottomControlView()
         return view
     }()
     
@@ -125,13 +124,13 @@ class FullPlayViewController: UIViewController {
         return view
     }()
     
-    lazy var leftControl: LeftControl = {
-        let view = LeftControl()
+    lazy var leftControl: LeftControlView = {
+        let view = LeftControlView()
         return view
     }()
     
-    lazy var rightControl: RightControl = {
-        let view = RightControl()
+    lazy var rightControl: RightControlView = {
+        let view = RightControlView()
         return view
     }()
 
@@ -176,12 +175,27 @@ class FullPlayViewController: UIViewController {
             make.bottom.equalTo(self.view.snp_bottomMargin)
         }
         
-//        let imageV = UIImageView(image: UIImage(named: "IMG_4298"))
-//        placeView.addSubview(imageV)
-//        imageV.snp.makeConstraints { make in
-//            make.edges.equalTo(placeView)
-//        }
+        let imageV = UIImageView(image: UIImage(named: "IMG_4298"))
+        placeView.addSubview(imageV)
+        imageV.snp.makeConstraints { make in
+            make.edges.equalTo(placeView)
+        }
         
+        
+        topControlView = TopControlView(pressBack: {
+            
+            if self.backBlock != nil {
+                self.backBlock!(5)
+            }
+            
+        }, pressVoce: {
+            
+        }, pressShowMore: {
+            
+        })
+        
+     
+                
         placeView.addSubview(topControlView)
         placeView.addSubview(bottomControlView)
         placeView.addSubview(middleControlView)
@@ -195,51 +209,54 @@ class FullPlayViewController: UIViewController {
             make.height.equalTo(70)
         }
         
+        
         bottomControlView.snp.makeConstraints { make in
             make.bottom.equalTo(placeView)
             make.centerX.equalTo(placeView)
             make.width.equalTo(placeView)
-            make.height.equalTo(70)
+            make.height.equalTo(115)
         }
         
         leftControl.snp.makeConstraints { make in
             make.left.equalTo(placeView)
-            make.top.equalTo(placeView.snp_topMargin).offset(70)
-            make.bottom.equalTo(placeView.snp_bottomMargin).offset(-70)
+            make.centerY.equalTo(placeView)
+//            make.top.equalTo(placeView.snp_topMargin).offset(70)
+//            make.bottom.equalTo(placeView.snp_bottomMargin).offset(-70)
             make.width.equalTo(70)
         }
         
         rightControl.snp.makeConstraints { make in
             make.right.equalTo(placeView)
-            make.top.equalTo(placeView.snp_topMargin).offset(70)
-            make.bottom.equalTo(placeView.snp_bottomMargin).offset(-70)
+            make.centerY.equalTo(placeView)
+//            make.top.equalTo(placeView.snp_topMargin).offset(70)
+//            make.bottom.equalTo(placeView.snp_bottomMargin).offset(-70)
             make.width.equalTo(70)
         }
         
-        middleControlView.snp.makeConstraints { make in
-            make.center.equalTo(placeView)
-            make.size.equalTo(CGSize(width: 220, height: 60))
-        }
+//        middleControlView.snp.makeConstraints { make in
+//            make.center.equalTo(placeView)
+//            make.size.equalTo(CGSize(width: 220, height: 60))
+//        }
         
-        self.leftControl.bindViewModel(viewModel: LeftControlViewModel(qualityStr: "Hello", speedStr: "world")) { type in
-            print(type)
-            
-            if type == .Shot {
-//                let view = OpenCloudView()
+//        self.leftControl.bindViewModel(viewModel: LeftControlViewModel(qualityStr: "Hello", speedStr: "world")) { type in
+//            print(type)
+//
+//            if type == .Shot {
+////                let view = OpenCloudView()
+////                self.placeView.addSubview(view)
+////                view.snp.makeConstraints { make in
+////                    make.center.equalTo(self.placeView)
+////                }
+//            }
+//
+//            if type == .Record {
+//                let view = VideoOutDateView()
 //                self.placeView.addSubview(view)
 //                view.snp.makeConstraints { make in
 //                    make.center.equalTo(self.placeView)
 //                }
-            }
-            
-            if type == .Record {
-                let view = VideoOutDateView()
-                self.placeView.addSubview(view)
-                view.snp.makeConstraints { make in
-                    make.center.equalTo(self.placeView)
-                }
-            }
-        }
+//            }
+//        }
         
         let topSect = Sects(rows: [VideoViewModel(), ErrorViewModel(), CardViewModel()])
         
@@ -275,15 +292,15 @@ class FullPlayViewController: UIViewController {
             make.width.equalTo(300)
         }
         
-        self.placeView.addSubview(self.fullBtn)
-        self.fullBtn.snp.makeConstraints { make in
-            make.top.equalTo(self.placeView).offset(16)
-            make.left.equalTo(self.placeView).offset(16)
-        }
+//        self.placeView.addSubview(self.fullBtn)
+//        self.fullBtn.snp.makeConstraints { make in
+//            make.top.equalTo(self.placeView).offset(16)
+//            make.left.equalTo(self.placeView).offset(16)
+//        }
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(appBecomeActive), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
-        startTimer()
+//        startTimer()
         
 //        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tableViewGesture))
 //        self.tableView.addGestureRecognizer(gesture)
@@ -312,6 +329,8 @@ class FullPlayViewController: UIViewController {
     }
     
     func showAnimation() {
+        
+        
         UIView.animate(withDuration: 0.5) {
             self.topControlView.snp.updateConstraints { make in
                 make.top.equalTo(self.placeView).offset(-100)
@@ -324,7 +343,11 @@ class FullPlayViewController: UIViewController {
     }
     
     func hideAnimation() {
+        
+        
         UIView.animate(withDuration: 0.5) {
+            
+            
             self.topControlView.snp.updateConstraints { make in
                 make.top.equalTo(self.placeView).offset(0)
             }

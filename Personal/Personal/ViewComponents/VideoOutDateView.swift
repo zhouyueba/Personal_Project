@@ -7,9 +7,18 @@
 
 import UIKit
 
+enum VideoOutDateEvents {
+    case LearnMore
+}
+
 class VideoOutDateView: UIView {
     
-    private var viewModel: VideoOutDateViewModel?
+    var events: ((VideoOutDateEvents)->Void)?
+    
+    convenience init(events event: @escaping (VideoOutDateEvents)->Void) {
+        self.init()
+        self.events = event
+    }
     
     @IBOutlet weak var topTipsL: UILabel!
     @IBOutlet weak var bottomBtn: UIButton!
@@ -17,7 +26,9 @@ class VideoOutDateView: UIView {
     @IBAction func learnMore(_ sender: UIButton) {
         print("learn more")
         
-        self.viewModel?.learnMore()
+        if self.events != nil {
+            self.events!(.LearnMore)
+        }
     }
     
     lazy var contentView: UIView = {
@@ -32,8 +43,8 @@ class VideoOutDateView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       
-       configurePage()
+        
+        configurePage()
     }
     
     required init?(coder: NSCoder) {
@@ -68,24 +79,13 @@ class VideoOutDateView: UIView {
             make.centerX.equalTo(contentView)
             make.width.lessThanOrEqualTo(self).offset(-32)
         }
-
+        
         self.bottomBtn.snp.makeConstraints { make in
             make.bottom.equalTo(-16)
             make.width.greaterThanOrEqualTo(98)
             make.height.equalTo(34)
             make.centerX.equalTo(contentView)
             make.top.equalTo(self.topTipsL.snp.bottom).offset(30)
-        }
-    }
-}
-
-extension VideoOutDateView: StatusViewProrocol {
-    
-    func bind(viewModel: BaseViewModel) {
-        
-        if let viewModel = viewModel as? VideoOutDateViewModel {
-            self.topTipsL.text = viewModel.topText
-            self.bottomBtn.setTitle(viewModel.bottomText, for: .normal)
         }
     }
 }
