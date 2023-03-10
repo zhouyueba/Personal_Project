@@ -73,6 +73,10 @@
 		22E29A2529B9BAAC00381543 /* BottomControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E29A2429B9BAAC00381543 /* BottomControlView.xib */; };
 		22E29A2729B9BD6400381543 /* TopControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E29A2629B9BD6400381543 /* TopControlView.swift */; };
 		22E29A2929B9BD7600381543 /* TopControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E29A2829B9BD7600381543 /* TopControlView.xib */; };
+		22E29A7D29BB105800381543 /* TopNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E29A7C29BB105800381543 /* TopNavBarView.swift */; };
+		22E29A7F29BB106400381543 /* TopNavBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E29A7E29BB106400381543 /* TopNavBarView.xib */; };
+		22E29A8129BB1FF600381543 /* BottomMenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E29A8029BB1FF600381543 /* BottomMenuBarView.swift */; };
+		22E29A8329BB200800381543 /* BottomMenuBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E29A8229BB200800381543 /* BottomMenuBarView.xib */; };
 		E293911B37D7167437A8AF80 /* Pods_Personal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1E3F1CF491D91F6C35E0C0 /* Pods_Personal.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +148,10 @@
 		22E29A2429B9BAAC00381543 /* BottomControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomControlView.xib; sourceTree = "<group>"; };
 		22E29A2629B9BD6400381543 /* TopControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopControlView.swift; sourceTree = "<group>"; };
 		22E29A2829B9BD7600381543 /* TopControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopControlView.xib; sourceTree = "<group>"; };
+		22E29A7C29BB105800381543 /* TopNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavBarView.swift; sourceTree = "<group>"; };
+		22E29A7E29BB106400381543 /* TopNavBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopNavBarView.xib; sourceTree = "<group>"; };
+		22E29A8029BB1FF600381543 /* BottomMenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuBarView.swift; sourceTree = "<group>"; };
+		22E29A8229BB200800381543 /* BottomMenuBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenuBarView.xib; sourceTree = "<group>"; };
 		90A1DA11B8A56DA7335046E2 /* Pods-Personal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Personal.release.xcconfig"; path = "Target Support Files/Pods-Personal/Pods-Personal.release.xcconfig"; sourceTree = "<group>"; };
 		BA6105BFD33F017D0A821448 /* Pods-Personal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Personal.debug.xcconfig"; path = "Target Support Files/Pods-Personal/Pods-Personal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +193,10 @@
 				22E29A2429B9BAAC00381543 /* BottomControlView.xib */,
 				22E29A2629B9BD6400381543 /* TopControlView.swift */,
 				22E29A2829B9BD7600381543 /* TopControlView.xib */,
+				22E29A7C29BB105800381543 /* TopNavBarView.swift */,
+				22E29A7E29BB106400381543 /* TopNavBarView.xib */,
+				22E29A8029BB1FF600381543 /* BottomMenuBarView.swift */,
+				22E29A8229BB200800381543 /* BottomMenuBarView.xib */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -385,8 +397,10 @@
 				22DE8DF329ADFE550063C1EC /* Assets.xcassets in Resources */,
 				2279819029B83C1300F1FDFD /* VideoOutDateView.xib in Resources */,
 				22DE8DF129ADFE530063C1EC /* Main.storyboard in Resources */,
+				22E29A8329BB200800381543 /* BottomMenuBarView.xib in Resources */,
 				22E29A2529B9BAAC00381543 /* BottomControlView.xib in Resources */,
 				2279819229B83FB700F1FDFD /* OpenCameraView.xib in Resources */,
+				22E29A7F29BB106400381543 /* TopNavBarView.xib in Resources */,
 				2279819A29B85EF200F1FDFD /* VideoTipsView.xib in Resources */,
 				2279819429B859C400F1FDFD /* OfflineView.xib in Resources */,
 				2279819629B85D6400F1FDFD /* VideoLoadingView.xib in Resources */,
@@ -450,6 +464,7 @@
 				22DE8E2729AEF7650063C1EC /* TestViewController.swift in Sources */,
 				2279818929B7571000F1FDFD /* VideoOutDateView.swift in Sources */,
 				2279825529B986C900F1FDFD /* D4SHDeviceDetailFeedState_model.swift in Sources */,
+				22E29A7D29BB105800381543 /* TopNavBarView.swift in Sources */,
 				2279817529B5DDA100F1FDFD /* CommonView.swift in Sources */,
 				22DE8E1529AE172A0063C1EC /* User_model.swift in Sources */,
 				22DE8E1629AE172A0063C1EC /* Point_model.swift in Sources */,
@@ -464,6 +479,7 @@
 				2279817329B5DCF700F1FDFD /* CommonCell.swift in Sources */,
 				22DE8E1F29AE18EF0063C1EC /* SysXp2pInfo_model.swift in Sources */,
 				22E29A2329B9BA9B00381543 /* BottomControlView.swift in Sources */,
+				22E29A8129BB1FF600381543 /* BottomMenuBarView.swift in Sources */,
 				22DE8DEA29ADFE530063C1EC /* AppDelegate.swift in Sources */,
 				2279818729B752CA00F1FDFD /* VideoLoadingView.swift in Sources */,
 				2279817B29B5DF2B00F1FDFD /* CommonTools.swift in Sources */,

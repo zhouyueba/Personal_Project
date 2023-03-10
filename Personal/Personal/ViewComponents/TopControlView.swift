@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TopControlViewDelegate: NSObjectProtocol {
+    func events(events: TopEvents)
+}
+
 enum TopEvents {
     case Back
     case Volume
@@ -15,14 +19,7 @@ enum TopEvents {
 
 class TopControlView: UIView {
     
-    var events: ((TopEvents)->Void)?
-    var voiceBlock: (()->Void)?
-    var showMoreBlock: (()->Void)?
-    
-    convenience init(events event: @escaping (TopEvents)->Void) {
-        self.init()
-        self.events = events
-    }
+    weak var delegate: TopControlViewDelegate?
     
     @IBOutlet weak var showMoreBtn: UIButton!
     @IBOutlet weak var liveView: UIView!
@@ -33,26 +30,19 @@ class TopControlView: UIView {
     @IBOutlet weak var tipsTextL: UILabel!
     @IBAction func pressBackAction(_ sender: UIButton) {
         print("back")
-        
-        if self.events != nil {
-            self.events!(.Back)
-        }
+        self.delegate?.events(events: .Back)
     }
     
     @IBAction func pressVoiceAction(_ sender: Any) {
         print("volume")
         
-        if self.events != nil {
-            self.events!(.Volume)
-        }
+        self.delegate?.events(events: .Volume)
     }
     
     @IBAction func showMoreAction(_ sender: UIButton) {
         print("show more")
         
-        if self.events != nil {
-            self.events!(.More)
-        }
+        self.delegate?.events(events: .More)
     }
     lazy var contentView: UIView = {
         
@@ -159,4 +149,5 @@ class TopControlView: UIView {
         
         gradientLayer.frame = self.bounds
     }
+    
 }

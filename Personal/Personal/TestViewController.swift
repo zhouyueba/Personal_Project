@@ -101,7 +101,7 @@ class TestViewController: UIViewController {
         self.view.backgroundColor = .green
         
         let openCloudView = OpenCloudView()
-        openCloudView.bind(viewModel: openCloudVM)
+//        openCloudView.bind(viewModel: openCloudVM)
         
         self.view.addSubview(openCloudView)
         openCloudView.snp.makeConstraints { make in

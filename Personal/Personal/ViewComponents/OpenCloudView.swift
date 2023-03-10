@@ -11,14 +11,13 @@ enum OpenCloudEvents {
     case OpenCloud
 }
 
+protocol OpenCloudViewDelegate: NSObjectProtocol {
+    func events(events: OpenCloudEvents)
+}
+
 class OpenCloudView: UIView {
     
-    var events: ((OpenCloudEvents)->Void)?
-    
-    convenience init(events event: @escaping (OpenCloudEvents)->Void) {
-        self.init()
-        self.events = event
-    }
+    weak var delegate: OpenCloudViewDelegate?
     
     @IBOutlet weak var topTextL: UILabel!
     
@@ -28,9 +27,7 @@ class OpenCloudView: UIView {
         
         print("open cloud")
         
-        if self.events != nil {
-            self.events!(.OpenCloud)
-        }
+        self.delegate?.events(events: .OpenCloud)
     }
     
     lazy var contentView: UIView = {

@@ -110,7 +110,10 @@ class FullPlayViewController: UIViewController {
         return placeView
     }()
     
-    private var topControlView: TopControlView = TopControlView()
+    private var topControlView: TopControlView = {
+        let view = TopControlView()
+        return view
+    }()
     
  
     
@@ -181,19 +184,6 @@ class FullPlayViewController: UIViewController {
             make.edges.equalTo(placeView)
         }
         
-        
-        topControlView = TopControlView(pressBack: {
-            
-            if self.backBlock != nil {
-                self.backBlock!(5)
-            }
-            
-        }, pressVoce: {
-            
-        }, pressShowMore: {
-            
-        })
-        
      
                 
         placeView.addSubview(topControlView)
@@ -220,16 +210,12 @@ class FullPlayViewController: UIViewController {
         leftControl.snp.makeConstraints { make in
             make.left.equalTo(placeView)
             make.centerY.equalTo(placeView)
-//            make.top.equalTo(placeView.snp_topMargin).offset(70)
-//            make.bottom.equalTo(placeView.snp_bottomMargin).offset(-70)
             make.width.equalTo(70)
         }
         
         rightControl.snp.makeConstraints { make in
             make.right.equalTo(placeView)
             make.centerY.equalTo(placeView)
-//            make.top.equalTo(placeView.snp_topMargin).offset(70)
-//            make.bottom.equalTo(placeView.snp_bottomMargin).offset(-70)
             make.width.equalTo(70)
         }
         
@@ -291,6 +277,8 @@ class FullPlayViewController: UIViewController {
             make.bottom.equalTo(placeView)
             make.width.equalTo(300)
         }
+        
+        topControlView.delegate = self
         
 //        self.placeView.addSubview(self.fullBtn)
 //        self.fullBtn.snp.makeConstraints { make in
@@ -369,6 +357,17 @@ class FullPlayViewController: UIViewController {
             print("这是竖屏1")
             
 //            portraitLayout()
+        }
+    }
+}
+
+extension FullPlayViewController: TopControlViewDelegate {
+    
+    func events(events: TopEvents) {
+        if events == .Back {
+            if self.backBlock != nil {
+                self.backBlock!(5)
+            }
         }
     }
 }

@@ -17,17 +17,13 @@ enum BottomEvent {
     case EndSlide
 }
 
+protocol BottomControlViewDelegate: NSObjectProtocol {
+    func events(events: BottomEvent)
+}
+
 class BottomControlView: UIView {
-    
-    var bottomControlViewEvents: ((BottomEvent)->Void)?
-    
-    
-    convenience init(events eventsBlock: @escaping (BottomEvent)->Void) {
-        self.init()
         
-        self.bottomControlViewEvents = eventsBlock
-    }
-    
+    weak var delegate: BottomControlViewDelegate?
     
     @IBOutlet weak var progressView: UISlider!
     @IBOutlet weak var endTimeL: UILabel!
@@ -41,48 +37,36 @@ class BottomControlView: UIView {
     @IBAction func changeQualityAction(_ sender: UIButton) {
         
         print("change quality")
-        
-        if self.bottomControlViewEvents != nil {
-            self.bottomControlViewEvents!(.ChangeQuality)
-        }
+
+        self.delegate?.events(events: .ChangeQuality)
         
     }
     @IBAction func showEatLiveAction(_ sender: UIButton) {
         
         print("show eat live")
         
-        if self.bottomControlViewEvents != nil {
-            self.bottomControlViewEvents!(.ShowEatLive)
-        }
+        self.delegate?.events(events: .ShowEatLive)
     }
     @IBAction func backToLiveAction(_ sender: UIButton) {
         print("back to live")
         
-        if self.bottomControlViewEvents != nil {
-            self.bottomControlViewEvents!(.BackToLive)
-        }
+        self.delegate?.events(events: .BackToLive)
     }
     
     @IBAction func palyVideo(_ sender: UIButton) {
         print("play video")
         
-        if self.bottomControlViewEvents != nil {
-            self.bottomControlViewEvents!(.PlayVideo)
-        }
+        self.delegate?.events(events: .PlayVideo)
     }
     @IBAction func slideChange(_ sender: UISlider) {
         print("slideing...")
         
-        if self.bottomControlViewEvents != nil {
-            self.bottomControlViewEvents!(.Sliding)
-        }
+        self.delegate?.events(events: .Sliding)
     }
     @IBAction func beginSlideAction(_ sender: UISlider) {
         print("begin slide")
         
-        if self.bottomControlViewEvents != nil {
-            self.bottomControlViewEvents!(.BeginSlide)
-        }
+        self.delegate?.events(events: .BeginSlide)
     }
     lazy var contentView: UIView = {
         

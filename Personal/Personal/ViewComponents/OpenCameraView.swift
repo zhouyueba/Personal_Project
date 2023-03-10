@@ -11,14 +11,13 @@ enum OpenCameraEvents {
     case OpenCamera
 }
 
+protocol OpenCameraViewDelegate: NSObjectProtocol {
+    func events(events: OpenCameraEvents)
+}
+
 class OpenCameraView: UIView {
     
-    var events: ((OpenCameraEvents)->Void)?
-    
-    convenience init(events event: @escaping (OpenCameraEvents)->Void) {
-        self.init()
-        self.events = event
-    }
+    weak var delegate: OpenCameraViewDelegate?
     
     @IBOutlet weak var topTipsL: UILabel!
     @IBOutlet weak var bottomBtn: UIButton!
@@ -26,9 +25,7 @@ class OpenCameraView: UIView {
     @IBAction func openCamera(_ sender: UIButton) {
         print("open camera")
         
-        if self.events != nil {
-            self.events!(.OpenCamera)
-        }
+        self.delegate?.events(events: .OpenCamera)
     }
     
     lazy var contentView: UIView = {

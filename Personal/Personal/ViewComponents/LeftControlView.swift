@@ -12,15 +12,13 @@ enum LeftEvents {
     case Voice
 }
 
+protocol LeftControlViewDelegate: NSObjectProtocol {
+    func events(events: LeftEvents)
+}
+
 class LeftControlView: UIView {
     
-    var events: ((LeftEvents)->Void)?
-    
-    convenience init(events eventsBlock: @escaping (LeftEvents)->Void) {
-        self.init()
-        
-        self.events = eventsBlock
-    }
+    weak var delegate: LeftControlViewDelegate?
     
     @IBOutlet weak var addFoodBtn: UIButton!
     
@@ -31,16 +29,12 @@ class LeftControlView: UIView {
     @IBAction func addFoodAction(_ sender: UIButton) {
         print("add food")
         
-        if self.events != nil {
-            self.events!(.AddFood)
-        }
+        self.delegate?.events(events: .AddFood)
     }
     @IBAction func voiceAction(_ sender: UIButton) {
         print("voice action")
         
-        if self.events != nil {
-            self.events!(.Voice)
-        }
+        self.delegate?.events(events: .Voice)
     }
     lazy var contentView: UIView = {
         

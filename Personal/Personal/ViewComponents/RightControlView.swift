@@ -12,37 +12,30 @@ enum RightEvents {
     case Record
 }
 
+protocol RightControlViewDelegate: NSObjectProtocol {
+    func events(events: RightEvents)
+}
+
 class RightControlView: UIView {
     
-    var events: ((RightEvents)->Void)?
-    
-    convenience init(events eventsBlock: @escaping (RightEvents)->Void) {
-        self.init()
-        
-        self.events = eventsBlock
-    }
+    weak var delegate: RightControlViewDelegate?
     
     @IBOutlet weak var cameraBtn: UIButton!
     
     @IBOutlet weak var recordBtn: UIButton!
     
-    
     @IBOutlet weak var stackView: UIStackView!
     
     @IBAction func cameraAction(_ sender: UIButton) {
         print("camera action")
-        
-        if self.events != nil {
-            self.events!(.Camera)
-        }
+
+        self.delegate?.events(events: .Camera)
         
     }
     @IBAction func recordBtn(_ sender: UIButton) {
         print("record action")
         
-        if self.events != nil {
-            self.events!(.Record)
-        }
+        self.delegate?.events(events: .Record)
     }
     lazy var contentView: UIView = {
         

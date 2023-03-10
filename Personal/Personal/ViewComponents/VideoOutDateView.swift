@@ -11,14 +11,13 @@ enum VideoOutDateEvents {
     case LearnMore
 }
 
+protocol VideoOutDateViewDelegate: NSObjectProtocol {
+    func events(events: VideoOutDateEvents)
+}
+
 class VideoOutDateView: UIView {
     
-    var events: ((VideoOutDateEvents)->Void)?
-    
-    convenience init(events event: @escaping (VideoOutDateEvents)->Void) {
-        self.init()
-        self.events = event
-    }
+    weak var delegate: VideoOutDateViewDelegate?
     
     @IBOutlet weak var topTipsL: UILabel!
     @IBOutlet weak var bottomBtn: UIButton!
@@ -26,9 +25,7 @@ class VideoOutDateView: UIView {
     @IBAction func learnMore(_ sender: UIButton) {
         print("learn more")
         
-        if self.events != nil {
-            self.events!(.LearnMore)
-        }
+        self.delegate?.events(events: .LearnMore)
     }
     
     lazy var contentView: UIView = {

@@ -50,6 +50,12 @@ class ViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
         
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        } else {
+            // Fallback on earlier versions
+        }
+        
         return tableView
     }()
     
@@ -87,6 +93,13 @@ class ViewController: UIViewController {
         self.dataSource.append(topSect)
         self.dataSource.append(bottomSect)
         
+        let navView = TopNavBarView()
+//        navView.backgroundColor = .lightGray
+        view.addSubview(navView)
+        
+        let menuView = BottomMenuBarView()
+        view.addSubview(menuView)
+        
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -95,11 +108,27 @@ class ViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.left.equalTo(16)
             make.right.equalTo(-16)
-            make.top.equalTo(self.view.snp_topMargin)
-            make.bottom.equalTo(self.view.snp_bottomMargin)
+            make.top.equalTo(navView.snp_bottomMargin).offset(10)
+            make.bottom.equalTo(menuView.snp.top).offset(-10)
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(appBecomeActive), name: UIApplication.willEnterForegroundNotification, object: nil)
+//        self.tableView.backgroundColor = .red
+        
+       
+        navView.snp.makeConstraints { make in
+            make.top.equalTo(self.view)
+            make.width.equalTo(self.view)
+            make.centerX.equalTo(self.view)
+            make.height.equalTo(88)
+        }
+       
+        
+        menuView.snp.makeConstraints { make in
+            make.bottom.equalTo(self.view)
+            make.width.equalTo(self.view)
+            make.centerX.equalTo(self.view)
+        }
     }
     
   
